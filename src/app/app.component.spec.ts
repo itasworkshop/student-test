@@ -26,10 +26,23 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('student-test');
   });
 
-  it('should render title', () => {
+  /* it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('student-test app is running!');
+  }); */
+
+  it('should render title in a h1 tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to student-test!');
+  }));
+
+  it('says hello',() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.helloworld()).toEqual('Hello World!');
   });
 });

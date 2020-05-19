@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'student-test';
+
+  helloworld(){
+    console.log("hey from hello world.");
+    return 'Hello World!';
+  }
 }
